@@ -1,1 +1,1 @@
-# solar-system-portfolio
+# solar-system
