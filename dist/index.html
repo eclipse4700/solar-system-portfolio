@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isaiah Kantor's Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Layer -->
+    <div id="backgroundLayer"></div>
+
+    <!-- Header Text Overlay -->
+    <div id="headerText">
+        <h1>Welcome to my portfolio</h1>
+        <p>I am a software developer</p>
+    </div>
+
+    <!-- Canvas Element -->
+    <canvas id="solarSystemCanvas"></canvas>
+
+    <!-- Labels for Planets -->
+    <div id="labels">
+        <div class="label" id="mercuryLabel">Work Experience</div>
+        <div class="label" id="venusLabel">Contact Info</div>
+        <div class="label" id="earthLabel">About Me</div>
+        <div class="label" id="marsLabel">Interest/Hobbies</div>
+        <div class="label" id="jupiterLabel">Projects</div>
+        <div class="label" id="saturnLabel">Skills</div>
+        <div class="label" id="uranusLabel">Resume</div>
+        <div class="label" id="neptuneLabel">Education</div>
+    </div>
+
+    <!-- Content Overlay -->
+    <div id="contentOverlay" style="display: none;">
+        <div id="content"></div>
+        <button id="closeButton">Close</button>
+    </div>
+
+    <!-- Attribution Section -->
+    <div id="attributions">
+        <p>Python icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Html 5 icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>React icons created by <a href="https://www.flaticon.com/authors/kiranshastry" title="Kiranshastry">Kiranshastry</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Css 3 icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Javascript icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Sql icons created by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Swift icons created by <a href="https://www.flaticon.com/authors/riajulislam" title="riajulislam">riajulislam</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Github icons created by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Figma icons created by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+        <p>Visual studio icons created by <a href="https://www.flaticon.com/authors/cobynecz" title="cobynecz">cobynecz</a> - <a href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>
+    </div>
+
+    <!-- HTML for displaying the resume PDF -->
+    <div id="resumeSection">
+        <iframe src="textures/Software Engineer Resume V3.pdf" width="100%" height="600px" frameborder="0"></iframe>
+    </div>
+
+    <!-- Hologram Overlay -->
+    <div id="hologramOverlay">
+        <button id="backButton" style="display: none;">Back</button>
+        <div id="hologramContent"></div>
+    </div>
+
+    <!-- Exit Button -->
+    <button id="exitButton" style="display: none;">Exit Planet</button>
+
+    <!-- Scripts -->
+    <script src="bundle.js"></script> <!-- Ensure this is the correct path to your JavaScript file -->
+
+    <div id="venusContactInfo" class="contact-info">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn" class="contact-icon" />
+        </a>
+        <a href="mailto:youremail@example.com">
+            <img src="images/email.png" alt="Email" class="contact-icon" />
+        </a>
+        <a href="https://github.com/yourusername" target="_blank">
+            <img src="images/github.png" alt="GitHub" class="contact-icon" />
+        </a>
+        <!-- Add more contact links as needed -->
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+    font-family: 'Aquire', Arial, sans-serif;
+}
+
+/* Canvas should fill the screen */
+#solarSystemCanvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1; /* Ensure it's below the overlay */
+    position: relative; /* Add position if not already set */
+}
+
+/* Header Text */
+#headerText {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    color: #fff;
+    z-index: 10; /* Ensure it appears above other elements */
+}
+
+#headerText h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+#headerText p {
+    font-size: 36px;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif; /* Example of a futuristic font */
+    animation: fadeInOut 3s ease-in-out infinite; /* Apply continuous animation */
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Start slightly above */
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at original position */
+    }
+}
+
+/* Keyframes for continuous fade-in and fade-out animation */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Content Overlay */
+#contentOverlay {
+    position: absolute;
+    top: 5%; /* Adjusted to provide more space */
+    left: 5%; /* Adjusted to provide more space */
+    width: 90%; /* Increased width */
+    height: 90%; /* Increased height */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Add padding for better spacing */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5); /* Optional: Add a glow effect */
+    z-index: 30; /* Ensure it appears above other elements */
+}
+
+#contentOverlay #content {
+    max-width: 100%; /* Allow content to use full width */
+    text-align: left; /* Align text to the left for better readability */
+    padding: 20px; /* Add padding for better spacing */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Labels for Planets */
+#labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.label {
+    position: absolute;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 15; /* Ensure it appears above other elements */
+}
+
+/* Job boxes */
+.job {
+    background-color: rgba(82, 2, 82, 0.5);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.job h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.job h3 {
+    margin: 5px 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.job p {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+
+/* Style the Contact Information */
+#contentOverlay a {
+    color: #00f;
+    text-decoration: none;
+}
+
+#contentOverlay a:hover {
+    text-decoration: underline;
+}
+
+/* Style the About Me Section */
+.about-me-image {
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add some margin below */
+    max-width: 200px; /* Set a maximum width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 15px; /* Set rounded corners */
+}
+
+#contentOverlay p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center; /* Center the text */
+    color: #fff;
+}
+
+/* Style the Hobbies and Interests Section */
+.hobbies-image {
+    display: block;
+    margin: 0 auto 20px; /* Center the image and add some margin below */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add some rounding to the image */
+}
+
+.hobbies-list {
+    /* background-color: rgba(128, 0, 128, 0.3); */
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center; /* Center the text */
+}
+
+.hobbies-list p {
+    margin: 10px 0;
+    font-size: 32px;
+    margin: 30px;
+}
+
+/* Style the Projects and Details */
+.project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(82, 2, 82, 0.4);
+    padding: 15px;
+    margin: 40px 0;
+    border-radius: 5px;
+    color: rgba(82, 2, 82, 0.6);
+    position: relative; /* Make the project div a positioned ancestor */
+    text-align: center;
+}
+
+.project-image {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.project-details {
+    flex: 1;
+    position: relative;
+    margin-bottom: 40px; /* Add margin to ensure space for the enter text */
+}
+
+.project-details h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.project-details p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #ccc;
+    bottom: 20px;
+}
+
+.enter-text {
+    position: absolute; /* Position the text absolutely within the project div */
+    bottom: 10px; /* Distance from the bottom */
+    right: 10px; /* Distance from the right */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for better visibility */
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enter-text:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darken on hover */
+}
+
+.project-carousel {
+    display: flex;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.carousel-image {
+    max-width: 100%;
+    height: 400px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.github-link {
+    width: 50px;
+    height: auto;
+    margin-top: 20px;
+    transition: transform 0.3s;
+}
+
+.github-link:hover {
+    transform: scale(1.1);
+}
+
+/* Style the Skills Section */
+.skills-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.skill-logo {
+    max-width: 100px; /* Adjust size as needed */
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+/* Style the Resume Image */
+.resume-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Optional: Add some rounding to the image */
+}
+
+/* Style the Education Section */
+.education {
+    display: flex;
+    align-items: center;
+    background-color: rgba(82, 2, 82, 0.5);
+    padding: 15px;
+    margin: 50px 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.education-logo {
+    max-width: 200px; /* Increase the maximum width */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.education-details {
+    flex: 1;
+}
+
+.education-details h2 {
+    margin: 0;
+    font-size: 24px; /* Increase the font size for the school name */
+}
+
+.education-details p {
+    margin: 5px 0 0;
+    font-size: 18px; /* Increase the font size for the degree */
+}
+
+#resumeSection {
+    margin: 20px auto;
+    max-width: 800px; /* Adjust the width as needed */
+    border: 1px solid #ccc; /* Optional: Add a border */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    overflow: hidden; /* Ensure content fits within the container */
+}
+
+#hologramOverlay {
+    position: fixed; /* Cover the entire viewport */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the overlay */
+    width: 70%;
+    height: 70%;
+    border-radius: 10px;
+    border: 2px solid rgba(141, 3, 141, 0.5);
+    background-color: rgba(128, 0, 128, 0.2); /* Adjust as needed */
+    color: #fff;
+    display: none; /* Show with JavaScript */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    z-index: 1000; /* Ensure it's above other elements */
+    pointer-events: auto; /* Capture pointer events */
+}
+
+#hologramOverlay * {
+    pointer-events: auto; /* Ensure child elements capture events */
+}
+
+#hologramContent {
+    max-width: 100%;
+    text-align: left;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+#hologramContent h1 {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+#exitButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(128, 0, 128, 0.2);
+    border: 1px solid rgba(141, 3, 141, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    z-index: 25; /* Ensure it appears above other elements */
+    box-shadow: 0 0 10px rgba(141, 3, 141, 0.5);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Space between icons */
+    margin-top: 20px;
+}
+
+.contact-icon {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px; /* Optional: Add some rounding to the image */
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.contact-icon:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+#backButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background: rgba(128, 0, 128, 0.2);
+    border: 1px solid rgba(141, 3, 141, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    z-index: 25; /* Ensure it appears above other elements */
+    box-shadow: 0 0 10px rgba(141, 3, 141, 0.5);
+}
+
+@font-face {
+    font-family: 'Aquire';
+    src: url('fonts/Aquire.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'AquireBold';
+    src: url('fonts/AquireBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'AquireBold', 'Aquire', Arial, sans-serif;
+    color: #dad9d9; /* Light yellow for headings */
+}
+
+body, p, .project-details p, .education-details p, .job p, #contentOverlay p {
+    color: #dad9d9; /* Light yellow for better contrast */
+}
